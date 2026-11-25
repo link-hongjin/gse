@@ -17,10 +17,10 @@ package extracker
 import (
 	"sort"
 
-	"github.com/go-ego/gse"
-	"github.com/go-ego/gse/hmm/relevance"
-	"github.com/go-ego/gse/hmm/segment"
-	"github.com/go-ego/gse/types"
+	"github.com/link-hongjin/gse"
+	"github.com/link-hongjin/gse/hmm/relevance"
+	"github.com/link-hongjin/gse/hmm/segment"
+	"github.com/link-hongjin/gse/types"
 )
 
 // TagExtracter is extract tags struct.

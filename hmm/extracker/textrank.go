@@ -18,9 +18,9 @@ import (
 	"math"
 	"sort"
 
-	"github.com/go-ego/gse"
-	"github.com/go-ego/gse/hmm/pos"
-	"github.com/go-ego/gse/hmm/segment"
+	"github.com/link-hongjin/gse"
+	"github.com/link-hongjin/gse/hmm/pos"
+	"github.com/link-hongjin/gse/hmm/segment"
 )
 
 const dampingFactor = 0.85

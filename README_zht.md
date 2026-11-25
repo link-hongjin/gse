@@ -6,15 +6,15 @@ Go 高效能多語言 NLP 和分詞, 支援英文、中文、日文等。
 <!--<img align="right" src="https://raw.githubusercontent.com/go-ego/ego/master/logo.jpg">-->
 <!--<a href="https://circleci.com/gh/go-ego/ego/tree/dev"><img src="https://img.shields.io/circleci/project/go-ego/ego/dev.svg" alt="Build Status"></a>-->
 
-[![Build Status](https://github.com/go-ego/gse/workflows/Go/badge.svg)](https://github.com/go-ego/gse/commits/master)
-[![Lint Status](https://github.com/go-ego/gse/workflows/Lint/badge.svg)](https://github.com/go-ego/gse/actions/workflows/lint.yml)
+[![Build Status](https://github.com/link-hongjin/gse/workflows/Go/badge.svg)](https://github.com/link-hongjin/gse/commits/master)
+[![Lint Status](https://github.com/link-hongjin/gse/workflows/Lint/badge.svg)](https://github.com/link-hongjin/gse/actions/workflows/lint.yml)
 [![CircleCI Status](https://circleci.com/gh/go-ego/gse.svg?style=shield)](https://circleci.com/gh/go-ego/gse)
 [![codecov](https://codecov.io/gh/go-ego/gse/branch/master/graph/badge.svg)](https://codecov.io/gh/go-ego/gse)
-[![Go Reference](https://pkg.go.dev/badge/github.com/go-ego/gse.svg)](https://pkg.go.dev/github.com/go-ego/gse)
-[![GitHub release](https://img.shields.io/github/release/go-ego/gse.svg)](https://github.com/go-ego/gse/releases/latest)
+[![Go Reference](https://pkg.go.dev/badge/github.com/link-hongjin/gse.svg)](https://pkg.go.dev/github.com/link-hongjin/gse)
+[![GitHub release](https://img.shields.io/github/release/go-ego/gse.svg)](https://github.com/link-hongjin/gse/releases/latest)
 <a href="https://discord.gg/535uZPakJw"><img src="https://img.shields.io/discord/1484658282777018551.svg?logo=discord&logoColor=white&label=Discord&color=5865F2" alt="加入 Discord 聊天 https://discord.gg/535uZPakJw"></a>
 
-[English](https://github.com/go-ego/gse/blob/master/README.md) | [简体中文](https://github.com/go-ego/gse/blob/master/README_zh.md) | [日本語](https://github.com/go-ego/gse/blob/master/README_ja.md)
+[English](https://github.com/link-hongjin/gse/blob/master/README.md) | [简体中文](https://github.com/link-hongjin/gse/blob/master/README_zh.md) | [日本語](https://github.com/link-hongjin/gse/blob/master/README_ja.md)
 
 Gse 是結巴分詞 (jieba) 的 golang 實作, 並加入 NLP 功能和更多特性
 
@@ -37,17 +37,17 @@ Gse 是結巴分詞 (jieba) 的 golang 實作, 並加入 NLP 功能和更多特�
 - 基於 Pytorch 的 NLP 支援 (進行中)
 - 命名實體識別 (進行中)
 - 支援接入 [riot](https://github.com/vcaesar/riot) 和 [zedsearch](https://github.com/vcaesar/zedsearch), 以及 [elasticsearch](https://github.com/vcaesar/go-gse-elastic)、[bleve](https://github.com/vcaesar/gse-bleve) 等
-- 可執行<a href="https://github.com/go-ego/gse/blob/master/tools/server/server.go"> JSON RPC 服務</a>
+- 可執行<a href="https://github.com/link-hongjin/gse/blob/master/tools/server/server.go"> JSON RPC 服務</a>
 
 ## 演算法:
 
-- [詞典](https://github.com/go-ego/gse/blob/master/dictionary.go)預設用雙陣列 trie（Double-Array Trie, [cedar](https://github.com/vcaesar/cedar)）實作, 使用 `-tags hash` 時用 rune 級雜湊 trie 實作
-- [分詞器](https://github.com/go-ego/gse/blob/master/dag.go)演算法為基於詞頻的最短路徑加動態規劃, 以及 DAG 和 HMM 演算法分詞
+- [詞典](https://github.com/link-hongjin/gse/blob/master/dictionary.go)預設用雙陣列 trie（Double-Array Trie, [cedar](https://github.com/vcaesar/cedar)）實作, 使用 `-tags hash` 時用 rune 級雜湊 trie 實作
+- [分詞器](https://github.com/link-hongjin/gse/blob/master/dag.go)演算法為基於詞頻的最短路徑加動態規劃, 以及 DAG 和 HMM 演算法分詞
 
 ## 分詞速度:
 
-- <a href="https://github.com/go-ego/gse/blob/master/tools/benchmark/benchmark.go">單執行緒</a> 9.2MB/s
-- <a href="https://github.com/go-ego/gse/blob/master/tools/benchmark/goroutines/goroutines.go">goroutines 並行</a> 26.8MB/s
+- <a href="https://github.com/link-hongjin/gse/blob/master/tools/benchmark/benchmark.go">單執行緒</a> 9.2MB/s
+- <a href="https://github.com/link-hongjin/gse/blob/master/tools/benchmark/goroutines/goroutines.go">goroutines 並行</a> 26.8MB/s
 - HMM 模式單執行緒分詞速度 3.2MB/s（雙核心 4 執行緒 Macbook Pro）
 
 ## Binding:
@@ -59,13 +59,13 @@ Gse 是結巴分詞 (jieba) 的 golang 實作, 並加入 NLP 功能和更多特�
 支援 Go module (Go 1.11+) 時, 直接匯入即可:
 
 ```go
-import "github.com/go-ego/gse"
+import "github.com/link-hongjin/gse"
 ```
 
 否則, 執行以下指令安裝 gse 套件:
 
 ```
-go get -u github.com/go-ego/gse
+go get -u github.com/link-hongjin/gse
 ```
 
 ### 編譯標籤 (Build tags)
@@ -112,7 +112,7 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 //go:embed testdata/test_en2.txt
@@ -173,8 +173,8 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/go-ego/gse"
-	"github.com/go-ego/gse/hmm/pos"
+	"github.com/link-hongjin/gse"
+	"github.com/link-hongjin/gse/hmm/pos"
 )
 
 var (
@@ -203,7 +203,7 @@ func main() {
 	// seg.LoadDict("jp")
 	//
 	// 載入詞典
-	// seg.LoadDict("your gopath"+"/src/github.com/go-ego/gse/data/dict/dictionary.txt")
+	// seg.LoadDict("your gopath"+"/src/github.com/link-hongjin/gse/data/dict/dictionary.txt")
 
 	cut()
 
@@ -273,7 +273,7 @@ import (
 	"fmt"
 	_ "embed"
 
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 //go:embed test_en_dict3.txt
@@ -312,7 +312,7 @@ func main() {
 ## 作者
 
 - [維護者](https://github.com/orgs/go-ego/people)
-- [貢獻者](https://github.com/go-ego/gse/graphs/contributors)
+- [貢獻者](https://github.com/link-hongjin/gse/graphs/contributors)
 
 ## 授權條款
 

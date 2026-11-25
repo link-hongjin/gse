@@ -6,15 +6,15 @@ And supports with [riot](https://github.com/vcaesar/riot), [zedsearch](https://g
 <!--<img align="right" src="https://raw.githubusercontent.com/go-ego/ego/master/logo.jpg">-->
 <!--<a href="https://circleci.com/gh/go-ego/ego/tree/dev"><img src="https://img.shields.io/circleci/project/go-ego/ego/dev.svg" alt="Build Status"></a>-->
 
-[![Build Status](https://github.com/go-ego/gse/workflows/Go/badge.svg)](https://github.com/go-ego/gse/commits/master)
-[![Lint Status](https://github.com/go-ego/gse/workflows/Lint/badge.svg)](https://github.com/go-ego/gse/actions/workflows/lint.yml)
+[![Build Status](https://github.com/link-hongjin/gse/workflows/Go/badge.svg)](https://github.com/link-hongjin/gse/commits/master)
+[![Lint Status](https://github.com/link-hongjin/gse/workflows/Lint/badge.svg)](https://github.com/link-hongjin/gse/actions/workflows/lint.yml)
 [![CircleCI Status](https://circleci.com/gh/go-ego/gse.svg?style=shield)](https://circleci.com/gh/go-ego/gse)
 [![codecov](https://codecov.io/gh/go-ego/gse/branch/master/graph/badge.svg)](https://codecov.io/gh/go-ego/gse)
-[![Go Reference](https://pkg.go.dev/badge/github.com/go-ego/gse.svg)](https://pkg.go.dev/github.com/go-ego/gse)
-[![GitHub release](https://img.shields.io/github/release/go-ego/gse.svg)](https://github.com/go-ego/gse/releases/latest)
+[![Go Reference](https://pkg.go.dev/badge/github.com/link-hongjin/gse.svg)](https://pkg.go.dev/github.com/link-hongjin/gse)
+[![GitHub release](https://img.shields.io/github/release/go-ego/gse.svg)](https://github.com/link-hongjin/gse/releases/latest)
 <a href="https://discord.gg/535uZPakJw"><img src="https://img.shields.io/discord/1484658282777018551.svg?logo=discord&logoColor=white&label=Discord&color=5865F2" alt="Join the Discord chat at https://discord.gg/535uZPakJw"></a>
 
-[简体中文](https://github.com/go-ego/gse/blob/master/README_zh.md) | [繁體中文](https://github.com/go-ego/gse/blob/master/README_zht.md) | [日本語](https://github.com/go-ego/gse/blob/master/README_ja.md)
+[简体中文](https://github.com/link-hongjin/gse/blob/master/README_zh.md) | [繁體中文](https://github.com/link-hongjin/gse/blob/master/README_zht.md) | [日本語](https://github.com/link-hongjin/gse/blob/master/README_ja.md)
 
 Gse is implements jieba by golang, and added NLP support and more features
 
@@ -37,17 +37,17 @@ I build [Codg](https://github.com/vcaesar/codg) now, Easy code and work AI agent
 - Support NLP by Pytorch (in work)
 - Named Entity Recognition (in work)
 - Supports [riot](https://github.com/vcaesar/riot) and [zedsearch](https://github.com/vcaesar/zedsearch), and [elasticsearch](https://github.com/vcaesar/go-gse-elastic), [bleve](https://github.com/vcaesar/gse-bleve) and others
-- run<a href="https://github.com/go-ego/gse/blob/master/tools/server/server.go"> JSON RPC service</a>.
+- run<a href="https://github.com/link-hongjin/gse/blob/master/tools/server/server.go"> JSON RPC service</a>.
 
 ## Algorithm:
 
-- [Dictionary](https://github.com/go-ego/gse/blob/master/dictionary.go) with the double array trie (Double-Array Trie, [cedar](https://github.com/vcaesar/cedar)) by default, or a rune-level hash trie with `-tags hash`
-- [Segmenter](https://github.com/go-ego/gse/blob/master/dag.go) algorithm is the shortest path (based on word frequency and dynamic programming), and DAG and HMM algorithm word segmentation.
+- [Dictionary](https://github.com/link-hongjin/gse/blob/master/dictionary.go) with the double array trie (Double-Array Trie, [cedar](https://github.com/vcaesar/cedar)) by default, or a rune-level hash trie with `-tags hash`
+- [Segmenter](https://github.com/link-hongjin/gse/blob/master/dag.go) algorithm is the shortest path (based on word frequency and dynamic programming), and DAG and HMM algorithm word segmentation.
 
 ## Text Segmentation speed:
 
-- <a href="https://github.com/go-ego/gse/blob/master/tools/benchmark/benchmark.go"> single thread</a> 9.2MB/s
-- <a href="https://github.com/go-ego/gse/blob/master/tools/benchmark/goroutines/goroutines.go">goroutines concurrent</a> 26.8MB/s.
+- <a href="https://github.com/link-hongjin/gse/blob/master/tools/benchmark/benchmark.go"> single thread</a> 9.2MB/s
+- <a href="https://github.com/link-hongjin/gse/blob/master/tools/benchmark/goroutines/goroutines.go">goroutines concurrent</a> 26.8MB/s.
 - HMM text segmentation single thread 3.2MB/s. (2core 4threads Macbook Pro).
 
 ## Binding:
@@ -59,13 +59,13 @@ I build [Codg](https://github.com/vcaesar/codg) now, Easy code and work AI agent
 With Go module support (Go 1.11+), just import:
 
 ```go
-import "github.com/go-ego/gse"
+import "github.com/link-hongjin/gse"
 ```
 
 Otherwise, to install the gse package, run the command:
 
 ```
-go get -u github.com/go-ego/gse
+go get -u github.com/link-hongjin/gse
 ```
 
 ### Build tags
@@ -112,7 +112,7 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 //go:embed testdata/test_en2.txt
@@ -173,8 +173,8 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/go-ego/gse"
-	"github.com/go-ego/gse/hmm/pos"
+	"github.com/link-hongjin/gse"
+	"github.com/link-hongjin/gse/hmm/pos"
 )
 
 var (
@@ -203,7 +203,7 @@ func main() {
 	// seg.LoadDict("jp")
 	//
 	// Load the dictionary
-	// seg.LoadDict("your gopath"+"/src/github.com/go-ego/gse/data/dict/dictionary.txt")
+	// seg.LoadDict("your gopath"+"/src/github.com/link-hongjin/gse/data/dict/dictionary.txt")
 
 	cut()
 
@@ -273,7 +273,7 @@ import (
 	"fmt"
 	_ "embed"
 
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 //go:embed test_en_dict3.txt
@@ -312,7 +312,7 @@ How to use it with elasticsearch?
 ## Authors
 
 - [Maintainers](https://github.com/orgs/go-ego/people)
-- [Contributors](https://github.com/go-ego/gse/graphs/contributors)
+- [Contributors](https://github.com/link-hongjin/gse/graphs/contributors)
 
 ## License
 

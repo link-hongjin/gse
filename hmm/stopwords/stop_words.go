@@ -1,7 +1,7 @@
 package stopwords
 
 import (
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 // StopWordMap the default stop words.

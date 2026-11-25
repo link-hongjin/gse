@@ -19,9 +19,9 @@ import (
 
 	"github.com/vcaesar/tt"
 
-	"github.com/go-ego/gse"
-	"github.com/go-ego/gse/hmm/relevance"
-	"github.com/go-ego/gse/types"
+	"github.com/link-hongjin/gse"
+	"github.com/link-hongjin/gse/hmm/relevance"
+	"github.com/link-hongjin/gse/types"
 )
 
 const (

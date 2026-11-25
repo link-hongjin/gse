@@ -11,7 +11,7 @@ linters:
         # closing a read-only file
         - (*os.File).Close
         # loading a dictionary is best effort, a token that fails is skipped
-        - (*github.com/go-ego/gse.Dictionary).AddToken
+        - (*github.com/link-hongjin/gse.Dictionary).AddToken
   exclusions:
     generated: lax
     presets:

@@ -1,4 +1,4 @@
-module github.com/go-ego/gse
+module github.com/link-hongjin/gse
 
 go 1.24
 

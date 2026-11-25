@@ -20,7 +20,7 @@ import (
 
 	"github.com/vcaesar/tt"
 
-	"github.com/go-ego/gse/types"
+	"github.com/link-hongjin/gse/types"
 )
 
 const (

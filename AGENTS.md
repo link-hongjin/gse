@@ -2,7 +2,7 @@
 
 Go efficient multilingual NLP and text segmentation library — a Go port/extension of jieba supporting English, Chinese (Simplified/Traditional), Japanese, with DAG, HMM (Viterbi), POS tagging, BM25/TF-IDF, and embedded dictionaries.
 
-Module: `github.com/go-ego/gse` · Go: `1.17` (`go.mod`) · CI tested against Go 1.25.x / 1.26.x on macOS/Linux/Windows.
+Module: `github.com/link-hongjin/gse` · Go: `1.17` (`go.mod`) · CI tested against Go 1.25.x / 1.26.x on macOS/Linux/Windows.
 
 ## Build/Test/Lint Commands
 
@@ -67,7 +67,7 @@ Root package `gse` is the public segmenter API. Subpackages under `hmm/` and `tf
 
 - **Package naming**: short, lowercase (`gse`, `hmm`, `pos`, `relevance`).
 - **File naming**: `snake_case.go`. Tests use `_test.go`; benchmarks live in `gse_bm_test.go`.
-- **Imports**: grouped stdlib → third-party → internal (`github.com/go-ego/gse/...`), separated by a blank line (see `hmm/relevance/bm25.go`, `dict_util.go`).
+- **Imports**: grouped stdlib → third-party → internal (`github.com/link-hongjin/gse/...`), separated by a blank line (see `hmm/relevance/bm25.go`, `dict_util.go`).
 - **Copyright header**: every source file starts with an Apache-2.0 header. New files must include it — either the "ego authors" short form (see `gse.go`, `segmenter.go`) or the "go-ego Project Developers" long form (see `CONTRIBUTING.md § Copyright`, `dictionary.go`).
 - **Doc comments**: every exported identifier has a `// Name ...` godoc comment. Use block `/* Package xxx ... */` at the top of the package-entry file.
 - **Error handling**: return `error` as last value; never discard with `_ = err`. Load-dict APIs return and log via `log.Println`; examples check and print.

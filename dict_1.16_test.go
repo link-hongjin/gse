@@ -7,7 +7,7 @@ import (
 	_ "embed"
 	"testing"
 
-	"github.com/go-ego/gse/types"
+	"github.com/link-hongjin/gse/types"
 	"github.com/vcaesar/tt"
 )
 

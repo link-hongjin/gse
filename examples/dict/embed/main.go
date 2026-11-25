@@ -7,7 +7,7 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 //go:embed test_dict3.txt

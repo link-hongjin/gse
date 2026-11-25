@@ -6,9 +6,9 @@ import (
 	"log"
 	"regexp"
 
-	"github.com/go-ego/gse"
-	"github.com/go-ego/gse/hmm/extracker"
-	"github.com/go-ego/gse/hmm/pos"
+	"github.com/link-hongjin/gse"
+	"github.com/link-hongjin/gse/hmm/extracker"
+	"github.com/link-hongjin/gse/hmm/pos"
 )
 
 var (

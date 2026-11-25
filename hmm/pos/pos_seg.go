@@ -19,8 +19,8 @@ import (
 	"regexp"
 	"unicode"
 
-	"github.com/go-ego/gse"
-	"github.com/go-ego/gse/hmm/util"
+	"github.com/link-hongjin/gse"
+	"github.com/link-hongjin/gse/hmm/util"
 )
 
 var (

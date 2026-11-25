@@ -4,7 +4,7 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 //go:embed testdata/test_en2.txt

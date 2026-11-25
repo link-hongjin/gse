@@ -6,15 +6,15 @@ Go による効率的な多言語 NLP およびテキスト分割ライブラリ
 <!--<img align="right" src="https://raw.githubusercontent.com/go-ego/ego/master/logo.jpg">-->
 <!--<a href="https://circleci.com/gh/go-ego/ego/tree/dev"><img src="https://img.shields.io/circleci/project/go-ego/ego/dev.svg" alt="Build Status"></a>-->
 
-[![Build Status](https://github.com/go-ego/gse/workflows/Go/badge.svg)](https://github.com/go-ego/gse/commits/master)
-[![Lint Status](https://github.com/go-ego/gse/workflows/Lint/badge.svg)](https://github.com/go-ego/gse/actions/workflows/lint.yml)
+[![Build Status](https://github.com/link-hongjin/gse/workflows/Go/badge.svg)](https://github.com/link-hongjin/gse/commits/master)
+[![Lint Status](https://github.com/link-hongjin/gse/workflows/Lint/badge.svg)](https://github.com/link-hongjin/gse/actions/workflows/lint.yml)
 [![CircleCI Status](https://circleci.com/gh/go-ego/gse.svg?style=shield)](https://circleci.com/gh/go-ego/gse)
 [![codecov](https://codecov.io/gh/go-ego/gse/branch/master/graph/badge.svg)](https://codecov.io/gh/go-ego/gse)
-[![Go Reference](https://pkg.go.dev/badge/github.com/go-ego/gse.svg)](https://pkg.go.dev/github.com/go-ego/gse)
-[![GitHub release](https://img.shields.io/github/release/go-ego/gse.svg)](https://github.com/go-ego/gse/releases/latest)
+[![Go Reference](https://pkg.go.dev/badge/github.com/link-hongjin/gse.svg)](https://pkg.go.dev/github.com/link-hongjin/gse)
+[![GitHub release](https://img.shields.io/github/release/go-ego/gse.svg)](https://github.com/link-hongjin/gse/releases/latest)
 <a href="https://discord.gg/535uZPakJw"><img src="https://img.shields.io/discord/1484658282777018551.svg?logo=discord&logoColor=white&label=Discord&color=5865F2" alt="Discord チャットに参加 https://discord.gg/535uZPakJw"></a>
 
-[English](https://github.com/go-ego/gse/blob/master/README.md) | [简体中文](https://github.com/go-ego/gse/blob/master/README_zh.md) | [繁體中文](https://github.com/go-ego/gse/blob/master/README_zht.md)
+[English](https://github.com/link-hongjin/gse/blob/master/README.md) | [简体中文](https://github.com/link-hongjin/gse/blob/master/README_zh.md) | [繁體中文](https://github.com/link-hongjin/gse/blob/master/README_zht.md)
 
 Gse は jieba の Golang 実装であり、NLP サポートやより多くの機能を追加しています。
 
@@ -37,17 +37,17 @@ Gse は jieba の Golang 実装であり、NLP サポートやより多くの機
 - Pytorch による NLP サポート（開発中）
 - 固有表現認識（開発中）
 - [riot](https://github.com/vcaesar/riot) と [zedsearch](https://github.com/vcaesar/zedsearch)、さらに [elasticsearch](https://github.com/vcaesar/go-gse-elastic)、[bleve](https://github.com/vcaesar/gse-bleve) などをサポート
-- <a href="https://github.com/go-ego/gse/blob/master/tools/server/server.go">JSON RPC サービス</a>の実行が可能
+- <a href="https://github.com/link-hongjin/gse/blob/master/tools/server/server.go">JSON RPC サービス</a>の実行が可能
 
 ## アルゴリズム:
 
-- [辞書](https://github.com/go-ego/gse/blob/master/dictionary.go)はデフォルトで Double Array Trie（ダブル配列トライ、[cedar](https://github.com/vcaesar/cedar)）、`-tags hash` 指定時は rune 単位のハッシュトライで実装
-- [分割器](https://github.com/go-ego/gse/blob/master/dag.go)アルゴリズムは最短パス（単語頻度と動的プログラミングに基づく）、DAG および HMM アルゴリズムによる分かち書き
+- [辞書](https://github.com/link-hongjin/gse/blob/master/dictionary.go)はデフォルトで Double Array Trie（ダブル配列トライ、[cedar](https://github.com/vcaesar/cedar)）、`-tags hash` 指定時は rune 単位のハッシュトライで実装
+- [分割器](https://github.com/link-hongjin/gse/blob/master/dag.go)アルゴリズムは最短パス（単語頻度と動的プログラミングに基づく）、DAG および HMM アルゴリズムによる分かち書き
 
 ## テキスト分割速度:
 
-- <a href="https://github.com/go-ego/gse/blob/master/tools/benchmark/benchmark.go">シングルスレッド</a> 9.2MB/s
-- <a href="https://github.com/go-ego/gse/blob/master/tools/benchmark/goroutines/goroutines.go">ゴルーチン並行</a> 26.8MB/s
+- <a href="https://github.com/link-hongjin/gse/blob/master/tools/benchmark/benchmark.go">シングルスレッド</a> 9.2MB/s
+- <a href="https://github.com/link-hongjin/gse/blob/master/tools/benchmark/goroutines/goroutines.go">ゴルーチン並行</a> 26.8MB/s
 - HMM テキスト分割シングルスレッド 3.2MB/s（2コア 4スレッド Macbook Pro）
 
 ## バインディング:
@@ -59,13 +59,13 @@ Gse は jieba の Golang 実装であり、NLP サポートやより多くの機
 Go モジュールサポート（Go 1.11+）では、単純にインポートするだけです：
 
 ```go
-import "github.com/go-ego/gse"
+import "github.com/link-hongjin/gse"
 ```
 
 それ以外の場合、gse パッケージをインストールするには以下のコマンドを実行します：
 
 ```
-go get -u github.com/go-ego/gse
+go get -u github.com/link-hongjin/gse
 ```
 
 ### ビルドタグ
@@ -112,7 +112,7 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 //go:embed testdata/test_en2.txt
@@ -173,8 +173,8 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/go-ego/gse"
-	"github.com/go-ego/gse/hmm/pos"
+	"github.com/link-hongjin/gse"
+	"github.com/link-hongjin/gse/hmm/pos"
 )
 
 var (
@@ -203,7 +203,7 @@ func main() {
 	// seg.LoadDict("jp")
 	//
 	// 辞書の読み込み
-	// seg.LoadDict("your gopath"+"/src/github.com/go-ego/gse/data/dict/dictionary.txt")
+	// seg.LoadDict("your gopath"+"/src/github.com/link-hongjin/gse/data/dict/dictionary.txt")
 
 	cut()
 
@@ -273,7 +273,7 @@ import (
 	"fmt"
 	_ "embed"
 
-	"github.com/go-ego/gse"
+	"github.com/link-hongjin/gse"
 )
 
 //go:embed test_en_dict3.txt
@@ -312,7 +312,7 @@ elasticsearch と一緒に使用するには？
 ## 作者
 
 - [メンテナー](https://github.com/orgs/go-ego/people)
-- [貢献者](https://github.com/go-ego/gse/graphs/contributors)
+- [貢献者](https://github.com/link-hongjin/gse/graphs/contributors)
 
 ## ライセンス
 

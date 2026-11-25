@@ -29,7 +29,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/go-ego/gse/types"
+	"github.com/link-hongjin/gse/types"
 )
 
 var (
