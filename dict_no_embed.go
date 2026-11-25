@@ -4,6 +4,6 @@
 package gse
 
 var (
-	ja, zhT, zhS string
-	stopDict     string
+	zhS      string
+	stopDict string
 )

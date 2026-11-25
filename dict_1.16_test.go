@@ -68,20 +68,19 @@ func TestLoadDictSTEmbed(t *testing.T) {
 	tt.Equal(t, 352275, len(seg1.Dict.Tokens))
 	tt.Equal(t, 3.3335153e+07, seg1.Dict.totalFreq)
 
-	err = seg1.LoadDictEmbed("zh_t, word1 20 n, " + testDict)
+	err = seg1.LoadDictEmbed("zh_s, word1 20 n, " + testDict)
 	tt.Nil(t, err)
-	tt.Equal(t, 587211, len(seg1.Dict.Tokens))
-	tt.Equal(t, 5.3226834e+07, seg1.Dict.totalFreq)
+	tt.Equal(t, 352279, len(seg1.Dict.Tokens))
+	tt.Equal(t, 3.3335245e+07, seg1.Dict.totalFreq)
 }
 
 func TestLoadDictZhEmbed(t *testing.T) {
 	var seg1 Segmenter
 	err := seg1.LoadDictEmbed("zh")
 	tt.Nil(t, err)
-	tt.Equal(t, 587207, len(seg1.Dict.Tokens))
-	// grown once to the total line count of both dicts
-	tt.Equal(t, 589035, cap(seg1.Dict.Tokens))
-	tt.Equal(t, 5.3226742e+07, seg1.Dict.totalFreq)
+	tt.Equal(t, 352275, len(seg1.Dict.Tokens))
+	tt.Equal(t, 352280, cap(seg1.Dict.Tokens))
+	tt.Equal(t, 3.3335153e+07, seg1.Dict.totalFreq)
 
 	f, pos, ok := seg1.Find("共和国")
 	tt.Bool(t, ok)
@@ -96,7 +95,7 @@ func TestLoadDictZhEmbed(t *testing.T) {
 	seg2.SkipSubSeg = true
 	err = seg2.LoadDictEmbed("zh")
 	tt.Nil(t, err)
-	tt.Equal(t, 587207, len(seg2.Dict.Tokens))
+	tt.Equal(t, 352275, len(seg2.Dict.Tokens))
 	for i := range seg2.Dict.Tokens {
 		tt.Equal(t, 0, len(seg2.Dict.Tokens[i].segments))
 	}
@@ -181,22 +180,14 @@ func TestLoadTFIDFDictStr(t *testing.T) {
 
 func TestLoadDictEmbedLangs(t *testing.T) {
 	seg := Segmenter{SkipSubSeg: true, NotLoadHMM: true}
-	tt.Nil(t, seg.LoadDictEmbed("ja"))
-	_, _, ok := seg.Find("こん")
-	tt.Bool(t, ok)
 	// words before the full-width space line (trimmed to "") must survive
-	freq, _, ok := seg.Find("犠牲")
-	tt.Bool(t, ok)
-	tt.Equal(t, 5622.0, freq)
-
 	empty := Segmenter{SkipSubSeg: true, NotLoadHMM: true}
 	tt.Nil(t, empty.LoadDictStr("犠牲 5622 n\n\u3000 1287 x\n運命 5578 n"))
 	tt.Equal(t, 2, empty.Dict.NumTokens())
-	freq, _, ok = empty.Find("犠牲")
+	freq, _, ok := empty.Find("犠牲")
 	tt.Bool(t, ok)
 	tt.Equal(t, 5622.0, freq)
 
-	tt.Nil(t, seg.LoadDictEmbed("zh_t"))
 	tt.Nil(t, seg.LoadDictEmbed("zh_s, word1 20 n"))
 	_, pos, ok := seg.Find("word1")
 	tt.Bool(t, ok)
@@ -204,7 +195,7 @@ func TestLoadDictEmbedLangs(t *testing.T) {
 
 	seg1 := Segmenter{SkipSubSeg: true, NotLoadHMM: true}
 	tt.Nil(t, seg1.LoadDictEmbed())
-	tt.Equal(t, 587207, seg1.Dict.NumTokens())
+	tt.Equal(t, 352275, seg1.Dict.NumTokens())
 }
 
 func TestLoadStopEmbedDefault(t *testing.T) {

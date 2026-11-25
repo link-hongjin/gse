@@ -31,25 +31,13 @@ func NewEmbed(dict ...string) (seg Segmenter, err error) {
 }
 
 func (seg *Segmenter) loadZh() error {
-	seg.loadDictStr(zhS, zhT)
-	seg.CalcToken()
-	return nil
+	return seg.LoadDictStr(zhS)
 }
 
 func (seg *Segmenter) loadZhST(d string) (begin int, err error) {
-	if strings.Contains(d, "zh,") {
-		begin = 1
-		// err = seg.LoadDictStr(dataDict)
-		err = seg.loadZh()
-	}
-
-	if strings.Contains(d, "zh_s,") {
+	if strings.Contains(d, "zh,") || strings.Contains(d, "zh_s,") {
 		begin = 1
 		err = seg.LoadDictStr(zhS)
-	}
-	if strings.Contains(d, "zh_t,") {
-		begin = 1
-		err = seg.LoadDictStr(zhT)
 	}
 
 	return
@@ -59,18 +47,8 @@ func (seg *Segmenter) loadZhST(d string) (begin int, err error) {
 func (seg *Segmenter) LoadDictEmbed(dict ...string) (err error) {
 	if len(dict) > 0 {
 		d := dict[0]
-		if d == "ja" {
-			return seg.LoadDictStr(ja)
-		}
-
-		if d == "zh" {
+		if d == "zh" || d == "zh_s" {
 			return seg.loadZh()
-		}
-		if d == "zh_s" {
-			return seg.LoadDictStr(zhS)
-		}
-		if d == "zh_t" {
-			return seg.LoadDictStr(zhT)
 		}
 
 		if strings.Contains(d, ", ") && seg.DictSep != "," {
@@ -88,7 +66,6 @@ func (seg *Segmenter) LoadDictEmbed(dict ...string) (err error) {
 		return
 	}
 
-	// return seg.LoadDictStr(dataDict)
 	return seg.loadZh()
 }
 
